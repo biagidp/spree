@@ -10,7 +10,7 @@ module Spree
       return unless @taxon
 
       @searcher = build_searcher(params.merge(:taxon => @taxon.id))
-      @products = @searcher.retrieve_products
+      @products = @searcher.retrieve_products.order('spree_products.id ASC')
     end
 
     private
