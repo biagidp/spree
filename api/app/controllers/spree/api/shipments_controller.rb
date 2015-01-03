@@ -81,7 +81,7 @@ module Spree
       end
 
       def find_and_update_shipment
-        @shipment = @order.shipments.accessible_by(current_ability, :update).find_by!(number: params[:id])
+        @shipment = @order.shipments.accessible_by(current_ability, :update).readonly(false).find_by!(number: params[:id])
         @shipment.update_attributes(shipment_params)
         @shipment.reload
       end
