@@ -50,7 +50,7 @@ Spree::Core::Engine.add_routes do
       end
     end
 
-    delete '/option_values/:id', :to => "option_values#destroy", :as => :option_value
+    #delete '/option_values/:id', :to => "option_values#destroy", :as => :option_value
 
     resources :properties do
       collection do
